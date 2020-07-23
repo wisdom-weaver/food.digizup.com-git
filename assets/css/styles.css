@@ -1,0 +1,375 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&family=Yeseva+One&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Satisfy', cursive;
+}
+*::selection{
+    color:white;
+    background-color: rgb(156, 97, 73);
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.font1{
+    font-family: 'Satisfy', cursive;
+}
+.font2{
+    font-family: 'Yeseva One', cursive;
+}
+
+h1,h2,h3,h4{
+    font-family: 'Yeseva One', cursive;
+}
+
+p,a{
+    font-family: 'Satisfy', cursive;
+    font-size:1.6rem;
+}
+
+.flow-text{
+    font-size:2.1rem;
+}
+
+
+ul> li> a{
+    color: black;
+    font-size: 1.6rem;
+}
+
+#hero{
+    display: flex;
+    top:0;
+    left:0;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height:100vh;
+    background:black;
+}
+
+#hero img{
+    position: absolute;
+    height:100vh;
+    width:100%;
+    object-fit: cover;
+    object-position: center;
+    background-color: rgba(0, 0, 0, 0.21);
+    transition: opacity 400ms ;
+    -moz-transition: opacity 400ms ;
+    /* animation: opacityfull 2s forwards */
+}
+
+.overlay{
+    background: rgba(0, 0, 0, 0.45);
+    position:absolute;
+    z-index: 5;
+    height:100vh;
+    width: 100%;
+    transition: all 0.5s ;
+}
+
+.overlay-index{
+    background: linear-gradient(to bottom left, rgba(200, 44, 70, 0.478), rgba(0, 0, 0, 0.224) 70%);
+    position:absolute;
+    z-index: 5;
+    height:100vh;
+    width: 100%;
+    transition: all 0.5s ;
+}
+
+#Wchef, #Mchef, #Nchef{
+    font-family: 'Satisfy', cursive;
+    font-size:2.5rem;
+    transition:all 1.2s;
+    margin-top: 5px;;
+}
+
+#Mchef, #Nchef{
+    border-radius: 50px 50px 50px 50px;
+    border: 3px solid white;
+    padding:15px;
+    cursor: pointer;
+}
+
+#Mchef:hover , #Nchef:hover{
+    background: rgba(0, 0, 0, 0.544) ;
+    font-size:2.6rem;
+    border-radius: 0px 50px 0px 50px;
+}
+
+
+
+#bg-img{
+    z-index:1;
+}
+#eat-img{
+    z-index:2;
+    opacity:0;
+}
+#drink-img{
+    z-index:3;
+    opacity:0;
+}
+#visit-img{
+    z-index:4;
+    opacity:0;
+}
+.hero-content{
+    z-index: 6;
+    position: absolute;
+    display: inline;
+    width:100%;
+    text-align: center;
+    color:white;
+}
+h1{
+    text-align: center;
+    font-size: 5rem;
+}
+
+@media screen and (max-width:760px){
+    h1{
+        font-size:4rem;
+    }
+    #eat-text h1, #drink-text h1, #visit-text h1{
+        font-size:2.4rem;
+    }    
+}
+#eat-text, #drink-text, #visit-text{
+    border-bottom: 2px solid transparent;
+    transition: all 300ms;
+}
+#eat-text:hover, #drink-text:hover, #visit-text:hover{
+    border-bottom: 2px solid white;
+}
+
+#eat-text h1::selection, #drink-text h1::selection, #visit-text h1::selection{
+    color:inherit;
+    background: inherit;
+}
+
+#eat-text h2::selection, #drink-text h2::selection, #visit-text h2::selection{
+    color:inherit;
+    background: inherit;
+}
+/* Navigation */
+
+.brand-logo{
+    font-size:2rem !important;
+}
+
+nav{
+    z-index:20;
+    position:fixed;
+}
+
+
+.brand-logo{
+    margin-left: 30px;;
+}
+
+#menu-icon{
+    padding-left:6px;
+    padding-right:10px;
+    margin-left:6px;
+    margin-right:6px;
+    cursor: pointer;
+}
+
+.navigation-overlay{
+    position: fixed;
+    left:0;
+    bottom:0;
+    z-index: -18;
+    opacity:0;
+    background: rgba(255, 255, 255, 0.972);
+    width: 100%;
+    height: 100vh;
+    
+    
+}
+
+.navigation-overlay .row{
+    margin-top: 20vh;
+    text-align: center;
+}
+
+.overlay-link {
+    width:100%;
+    text-align: center;
+    color:black;
+    font-size:2rem;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    opacity:0;
+    transition: all 0.2s ;
+}
+
+.overlay-link:hover{
+    color: rgb(156, 97, 73) !important;
+    letter-spacing: 8px;
+}
+
+@keyframes overlayLinkAnim{
+    to{
+        opacity:1;
+        transform: translateY(-30px);
+    }
+}
+
+
+.atnav{
+    color:white !important;
+    transition: all 0.2s ease-in-out;
+}
+
+.atnavWithOverlay{
+    color:black !important;
+    transition: all 0.2s ease-in-out;
+}
+
+@keyframes overlayAnim{
+    from{
+        z-index:-1;
+        opacity:0;
+    }
+    to{
+        z-index:18;
+        opacity:1;
+    }
+}
+@keyframes overlayAnimEnd{
+    from{
+        z-index:18;
+        opacity:1;
+    }
+    to{
+        z-index:-1;
+        opacity:0;
+    }
+}
+
+#navigation-bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background:transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.navigation-bar-hide{
+    transform: translateY(-100%);
+}
+
+social-icons-pack-nav{
+    overflow: visible !important;
+}
+
+.social-icons{
+    width:20px;
+    height:auto;
+    margin:5px;
+    margin-top:20px;
+    transition: all 0.1s ;
+    fill:white;
+    overflow: visible !important;
+}
+
+
+.social-icons-large{
+    width:50px;
+    /* padding: 20px; */
+    height:auto;
+    margin:20px;
+    transition: all 0.1s ;
+    overflow: visible !important;
+}
+
+svg path{
+    transition: all 0.2s ;
+}
+
+
+.social-icons-pack:hover .col svg path{
+    fill:gray;
+}
+
+.social-icons-large:hover path{
+    fill:black !important;
+}
+
+
+.navigation-link{
+    transition: all 0.2s;
+}
+
+.navigation-link:hover{
+    color: rgb(193, 129, 105) !important;
+    font-size: 2rem;;
+}
+.active{
+    color: rgb(193, 129, 105) !important;
+}
+
+
+/* =========Story Page */
+#story-text{
+    transition:all 0.2s ease;
+}
+
+.card{
+    box-shadow: none;
+}
+
+h1,h2,h3,h4,h5,h6,a,p{
+    text-align: center;
+}
+
+#footer-area{
+    margin-top:10vh;
+    margin-bottom:10vh;
+}
+
+/* ===========Gallery Page */
+#gallery-text{
+    transition:all 0.2s ease;
+}
+
+.gallery-img{
+    object-fit: cover;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    scale:1.3;
+}
+
+#gallery-section{
+    background-color: black;
+    background-image: url('/assets/img/i10.jpg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: repeat;
+}
+
+#gallery-section .row .col{
+    overflow: hidden;
+}
+
+/* ========Visit Page */
+#visit-text{
+    transition:all 0.2s ease;
+}
+#visit-section{
+    margin-top: 15vh;
+}
